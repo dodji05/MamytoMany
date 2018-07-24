@@ -1,13 +1,20 @@
 <?php
 
-namespace AppBundle\Repository;
+namespace App\Repository;
 
-use AppBundle\Entity\Genus;
-use AppBundle\Entity\GenusNote;
+use App\Entity\Genus;
+use App\Entity\GenusNote;
 use Doctrine\ORM\EntityRepository;
 
-class GenusNoteRepository extends EntityRepository
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Symfony\Bridge\Doctrine\RegistryInterface;
+
+class GenusNoteRepository extends ServiceEntityRepository
 {
+    public function __construct(RegistryInterface $registry)
+    {
+        parent::__construct($registry, GenusNote::class);
+    }
     /**
      * @param Genus $genus
      * @return GenusNote[]

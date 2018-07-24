@@ -1,8 +1,8 @@
 <?php
 
-namespace AppBundle\Repository;
+namespace App\Repository;
 
-use AppBundle\Entity\Genus;
+use App\Entity\Genus;
 use Doctrine\ORM\EntityRepository;
 
 class GenusRepository extends EntityRepository

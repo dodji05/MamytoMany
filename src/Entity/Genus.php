@@ -1,13 +1,13 @@
 <?php
 
-namespace  AppBundle\Entity;
+namespace  App\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity(repositoryClass="AppBundle\Repository\GenusRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\GenusRepository")
  * @ORM\Table(name="genus")
  */
 class Genus
@@ -32,7 +32,7 @@ class Genus
 
     /**
      * @Assert\NotBlank()
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\SubFamily")
+     * @ORM\ManyToOne(targetEntity="App\Entity\SubFamily")
      * @ORM\JoinColumn(nullable=false)
      */
     private $subFamily;
